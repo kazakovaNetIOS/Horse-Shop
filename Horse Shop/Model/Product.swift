@@ -12,12 +12,14 @@ struct Product {
     let uid: String
     let title: String
     let price: Double
-    let dateOfAdding: Date?
+    let manufacturer: String
+    let image: String?
     
-    init(uid: String = UUID().uuidString, title: String, price: Double = 0.0, dateOfAdding: Date?) {
+    init(uid: String = UUID().uuidString, title: String, price: Double = 0.0, manufacturer: String, image: String?) {
         self.uid = uid
         self.title = title
         self.price = price
-        self.dateOfAdding = dateOfAdding
+        self.manufacturer = manufacturer
+        self.image = image
     }
 }

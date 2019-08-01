@@ -16,9 +16,10 @@ extension Product {
         dict["uid"] = self.uid
         dict["title"] = self.title
         dict["price"] = self.price
+        dict["manufacturer"] = self.manufacturer
         
-        if let date = self.dateOfAdding {
-            dict["dateOfAdding"] = date.timeIntervalSince1970
+        if let image = self.image {
+            dict["image"] = image
         }
         
         return dict
@@ -28,14 +29,16 @@ extension Product {
         guard json.count != 0,
             json["uid"] != nil,
             json["title"] != nil,
-            json["price"] != nil else {
+            json["price"] != nil,
+            json["manufacturer"] != nil else {
                 return nil
         }
         
         var uid: String = ""
         var title: String = ""
         var price: Double = 0.0
-        var dateOfAdding: Date?
+        var manufacturer: String = ""
+        var image: String?
         
         for (key, value) in json {
             switch key {
@@ -57,12 +60,18 @@ extension Product {
                 }
                 
                 price = priceDouble
-            case "dateOfAdding":
-                guard let timeInterval = value as? TimeInterval else {
+            case "manufacturer":
+                guard let manufacturerString = value as? String else {
                     return nil
                 }
                 
-                dateOfAdding = Date(timeIntervalSince1970: timeInterval)
+                manufacturer = manufacturerString
+            case "image":
+                guard let imageString = value as? String else {
+                    return nil
+                }
+                
+                image = imageString
             default:
                 break
             }
@@ -72,7 +81,8 @@ extension Product {
             uid: uid,
             title: title,
             price: price,
-            dateOfAdding: dateOfAdding
+            manufacturer: manufacturer,
+            image: image
         )
     }
 }
