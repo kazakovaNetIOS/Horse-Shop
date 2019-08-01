@@ -79,7 +79,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjN-Hz-Ge5">
-                                <rect key="frame" x="16" y="373" width="343" height="271"/>
+                                <rect key="frame" x="16" y="373" width="343" height="261"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqq-BV-lMy">
                                         <rect key="frame" x="16" y="16" width="311" height="22"/>
@@ -95,7 +95,7 @@
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qg6-CW-62f">
-                                        <rect key="frame" x="16" y="71" width="311" height="184"/>
+                                        <rect key="frame" x="16" y="71" width="311" height="174"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <mutableString key="text">Эти рабочие ногавки на каждый день предлагают простую, но эффективную защиту ног лошади. Новый стиль этих неопреновых ногавок с застежками-липучками идеально подходит для тренировок. Неопрен снабжен вентиляционными отверстиями для усиления циркуляции воздуха. Эти ногавки легко надеть и они выглядят также стильно, как бинты.</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -117,10 +117,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJc-JO-GoC">
-                                <rect key="frame" x="0.0" y="660" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="650" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="64C-QV-4zr"/>
+                                    <constraint firstAttribute="height" constant="50" id="64C-QV-4zr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <state key="normal" title="В корзину">

@@ -10,7 +10,6 @@
 		FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */; };
 		FFEA88DE22F2F62400E4A590 /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DD22F2F62400E4A590 /* ProductListController.swift */; };
 		FFEA88E122F2F62400E4A590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88DF22F2F62400E4A590 /* Main.storyboard */; };
-		FFEA88E322F2F62800E4A590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88E222F2F62800E4A590 /* Assets.xcassets */; };
 		FFEA88E622F2F62800E4A590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88E422F2F62800E4A590 /* LaunchScreen.storyboard */; };
 		FFEA88EF22F2F84C00E4A590 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88EE22F2F84C00E4A590 /* Product.swift */; };
 		FFEA88F122F2FF5D00E4A590 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F022F2FF5D00E4A590 /* Store.swift */; };
@@ -23,6 +22,7 @@
 		FFEA891622F3153500E4A590 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA891422F3153500E4A590 /* ProductTableViewCell.swift */; };
 		FFEA891722F3153500E4A590 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEA891522F3153500E4A590 /* ProductTableViewCell.xib */; };
 		FFEA891A22F35C3D00E4A590 /* ProductDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA891922F35C3D00E4A590 /* ProductDetailController.swift */; };
+		FFEA891C22F3903000E4A590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA891B22F3903000E4A590 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,6 @@
 		FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFEA88DD22F2F62400E4A590 /* ProductListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
 		FFEA88E022F2F62400E4A590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FFEA88E222F2F62800E4A590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFEA88E522F2F62800E4A590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFEA88E722F2F62800E4A590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFEA88EE22F2F84C00E4A590 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		FFEA891422F3153500E4A590 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		FFEA891522F3153500E4A590 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		FFEA891922F35C3D00E4A590 /* ProductDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailController.swift; sourceTree = "<group>"; };
+		FFEA891B22F3903000E4A590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +76,13 @@
 		FFEA88DA22F2F62400E4A590 /* Horse Shop */ = {
 			isa = PBXGroup;
 			children = (
+				FFEA891B22F3903000E4A590 /* Assets.xcassets */,
 				FFEA891822F35C1500E4A590 /* Product Detail */,
 				FFEA890E22F312DF00E4A590 /* Product list */,
 				FFEA890D22F312BD00E4A590 /* Story board */,
 				FFEA88F422F3053E00E4A590 /* Operations */,
 				FFEA88ED22F2F82500E4A590 /* Model */,
 				FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */,
-				FFEA88E222F2F62800E4A590 /* Assets.xcassets */,
 				FFEA88E722F2F62800E4A590 /* Info.plist */,
 			);
 			path = "Horse Shop";
@@ -213,7 +213,7 @@
 			files = (
 				FFEA88E622F2F62800E4A590 /* LaunchScreen.storyboard in Resources */,
 				FFEA891722F3153500E4A590 /* ProductTableViewCell.xib in Resources */,
-				FFEA88E322F2F62800E4A590 /* Assets.xcassets in Resources */,
+				FFEA891C22F3903000E4A590 /* Assets.xcassets in Resources */,
 				FFEA88E122F2F62400E4A590 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,7 +392,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.kazakovanet.Horse-Shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -410,7 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.kazakovanet.Horse-Shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

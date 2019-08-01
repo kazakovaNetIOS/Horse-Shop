@@ -70,6 +70,12 @@ extension ProductListController: UITableViewDataSource {
         cell.manufacturerLabel?.text = product.manufacturer
         cell.priceLabel?.text = "₽\(product.price)"
         
+        if let image = product.image {
+            cell.pictureImageView.image = UIImage(named: image)
+        } else {
+            cell.pictureImageView.image = UIImage(named: "noimage")
+        }
+        
         return cell
     }
     

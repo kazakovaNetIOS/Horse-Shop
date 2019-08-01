@@ -32,5 +32,10 @@ class ProductDetailController: UIViewController {
         manufacturerLabel.text = displayProduct.manufacturer
         priceLabel.text = "₽\(displayProduct.price)"
         descriptionTextView.text = displayProduct.description
+        if let image = displayProduct.image {
+            pictureImageView.image = UIImage(named: image)
+        } else {
+            pictureImageView.image = UIImage(named: "noimage")
+        }
     }
 }
