@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */; };
-		FFEA88DE22F2F62400E4A590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DD22F2F62400E4A590 /* ViewController.swift */; };
+		FFEA88DE22F2F62400E4A590 /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DD22F2F62400E4A590 /* ProductListController.swift */; };
 		FFEA88E122F2F62400E4A590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88DF22F2F62400E4A590 /* Main.storyboard */; };
 		FFEA88E322F2F62800E4A590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88E222F2F62800E4A590 /* Assets.xcassets */; };
 		FFEA88E622F2F62800E4A590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88E422F2F62800E4A590 /* LaunchScreen.storyboard */; };
@@ -20,12 +20,14 @@
 		FFEA890422F3053E00E4A590 /* BaseFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F822F3053E00E4A590 /* BaseFileOperation.swift */; };
 		FFEA890522F3053E00E4A590 /* RemoveProductFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F922F3053E00E4A590 /* RemoveProductFileOperation.swift */; };
 		FFEA890822F3053E00E4A590 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88FC22F3053E00E4A590 /* AsyncOperation.swift */; };
+		FFEA891622F3153500E4A590 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA891422F3153500E4A590 /* ProductTableViewCell.swift */; };
+		FFEA891722F3153500E4A590 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEA891522F3153500E4A590 /* ProductTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FFEA88D822F2F62400E4A590 /* Horse Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horse Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFEA88DD22F2F62400E4A590 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFEA88DD22F2F62400E4A590 /* ProductListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
 		FFEA88E022F2F62400E4A590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFEA88E222F2F62800E4A590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFEA88E522F2F62800E4A590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		FFEA88F822F3053E00E4A590 /* BaseFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFileOperation.swift; sourceTree = "<group>"; };
 		FFEA88F922F3053E00E4A590 /* RemoveProductFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveProductFileOperation.swift; sourceTree = "<group>"; };
 		FFEA88FC22F3053E00E4A590 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		FFEA891422F3153500E4A590 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		FFEA891522F3153500E4A590 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +74,12 @@
 		FFEA88DA22F2F62400E4A590 /* Horse Shop */ = {
 			isa = PBXGroup;
 			children = (
+				FFEA890E22F312DF00E4A590 /* Product list */,
+				FFEA890D22F312BD00E4A590 /* Story board */,
 				FFEA88F422F3053E00E4A590 /* Operations */,
 				FFEA88ED22F2F82500E4A590 /* Model */,
 				FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */,
-				FFEA88DD22F2F62400E4A590 /* ViewController.swift */,
-				FFEA88DF22F2F62400E4A590 /* Main.storyboard */,
 				FFEA88E222F2F62800E4A590 /* Assets.xcassets */,
-				FFEA88E422F2F62800E4A590 /* LaunchScreen.storyboard */,
 				FFEA88E722F2F62800E4A590 /* Info.plist */,
 			);
 			path = "Horse Shop";
@@ -110,6 +113,33 @@
 				FFEA88F922F3053E00E4A590 /* RemoveProductFileOperation.swift */,
 			);
 			path = FileOperations;
+			sourceTree = "<group>";
+		};
+		FFEA890D22F312BD00E4A590 /* Story board */ = {
+			isa = PBXGroup;
+			children = (
+				FFEA88DF22F2F62400E4A590 /* Main.storyboard */,
+				FFEA88E422F2F62800E4A590 /* LaunchScreen.storyboard */,
+			);
+			path = "Story board";
+			sourceTree = "<group>";
+		};
+		FFEA890E22F312DF00E4A590 /* Product list */ = {
+			isa = PBXGroup;
+			children = (
+				FFEA890F22F3149900E4A590 /* Product table cell */,
+				FFEA88DD22F2F62400E4A590 /* ProductListController.swift */,
+			);
+			path = "Product list";
+			sourceTree = "<group>";
+		};
+		FFEA890F22F3149900E4A590 /* Product table cell */ = {
+			isa = PBXGroup;
+			children = (
+				FFEA891422F3153500E4A590 /* ProductTableViewCell.swift */,
+				FFEA891522F3153500E4A590 /* ProductTableViewCell.xib */,
+			);
+			path = "Product table cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFEA88E622F2F62800E4A590 /* LaunchScreen.storyboard in Resources */,
+				FFEA891722F3153500E4A590 /* ProductTableViewCell.xib in Resources */,
 				FFEA88E322F2F62800E4A590 /* Assets.xcassets in Resources */,
 				FFEA88E122F2F62400E4A590 /* Main.storyboard in Resources */,
 			);
@@ -184,12 +215,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFEA890222F3053E00E4A590 /* SaveProductFileOperation.swift in Sources */,
-				FFEA88DE22F2F62400E4A590 /* ViewController.swift in Sources */,
+				FFEA88DE22F2F62400E4A590 /* ProductListController.swift in Sources */,
 				FFEA890422F3053E00E4A590 /* BaseFileOperation.swift in Sources */,
 				FFEA890522F3053E00E4A590 /* RemoveProductFileOperation.swift in Sources */,
 				FFEA88F322F302E200E4A590 /* ProductExtensions.swift in Sources */,
 				FFEA890322F3053E00E4A590 /* LoadProductsFileOperation.swift in Sources */,
 				FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */,
+				FFEA891622F3153500E4A590 /* ProductTableViewCell.swift in Sources */,
 				FFEA88EF22F2F84C00E4A590 /* Product.swift in Sources */,
 				FFEA890822F3053E00E4A590 /* AsyncOperation.swift in Sources */,
 				FFEA88F122F2FF5D00E4A590 /* Store.swift in Sources */,
