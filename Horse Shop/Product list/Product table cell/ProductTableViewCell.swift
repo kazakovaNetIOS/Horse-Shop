@@ -20,6 +20,15 @@ class ProductTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         cellWrapperView.layer.cornerRadius = 5
-//        pictureImageView.contentMode = .scaleAspectFit
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected { cellWrapperView.backgroundColor = .white }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: true)
+        if highlighted { cellWrapperView.backgroundColor = .white }
     }
 }

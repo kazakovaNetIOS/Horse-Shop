@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -12,56 +12,57 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="358" id="KGk-i7-Jjw" customClass="ProductTableViewCell" customModule="Horse_Shop" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="358"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="KGk-i7-Jjw" customClass="ProductTableViewCell" customModule="Horse_Shop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="135"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="357.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="360" height="134.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ete-yV-Zmr">
-                        <rect key="frame" x="16" y="8" width="288" height="341.5"/>
+                        <rect key="frame" x="16" y="8" width="328" height="118.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="lkY-sv-fIM">
-                                <rect key="frame" x="0.0" y="16" width="288" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="lkY-sv-fIM">
+                                <rect key="frame" x="8" y="16" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="XzC-5x-v8k"/>
+                                    <constraint firstAttribute="height" constant="80" id="Qqm-tH-8QR"/>
+                                    <constraint firstAttribute="width" constant="80" id="SEU-KS-ZRL"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Ногавки анатомические передние" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFK-jP-uqC">
-                                <rect key="frame" x="8" y="182" width="272" height="51"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORTON Light" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSr-rO-cfg">
-                                <rect key="frame" x="8" y="241" width="272" height="18.5"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORTON Light" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSr-rO-cfg">
+                                <rect key="frame" x="104" y="57" width="216" height="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="₽3250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-aP-bF4">
-                                <rect key="frame" x="8" y="271.5" width="272" height="21"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="₽3250" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-aP-bF4">
+                                <rect key="frame" x="104" y="75" width="216" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Ногавки анатомические передние" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFK-jP-uqC">
+                                <rect key="frame" x="104" y="16" width="216" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="fFK-jP-uqC" secondAttribute="trailing" constant="8" id="0Or-T8-WjM"/>
-                            <constraint firstItem="fFK-jP-uqC" firstAttribute="leading" secondItem="Ete-yV-Zmr" secondAttribute="leading" constant="8" id="3sF-y8-slC"/>
-                            <constraint firstAttribute="trailing" secondItem="lkY-sv-fIM" secondAttribute="trailing" id="4oE-9f-6B7"/>
-                            <constraint firstAttribute="trailing" secondItem="nSr-rO-cfg" secondAttribute="trailing" constant="8" id="4zN-Yk-bMC"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IbI-aP-bF4" secondAttribute="bottom" constant="30" id="5y8-TD-nYq"/>
-                            <constraint firstItem="IbI-aP-bF4" firstAttribute="leading" secondItem="Ete-yV-Zmr" secondAttribute="leading" constant="8" id="Am6-Qd-3y4"/>
-                            <constraint firstItem="lkY-sv-fIM" firstAttribute="leading" secondItem="Ete-yV-Zmr" secondAttribute="leading" id="BUs-Ta-PJL"/>
-                            <constraint firstItem="nSr-rO-cfg" firstAttribute="top" secondItem="fFK-jP-uqC" secondAttribute="bottom" constant="8" id="O8V-SI-MaB"/>
-                            <constraint firstItem="IbI-aP-bF4" firstAttribute="top" secondItem="nSr-rO-cfg" secondAttribute="bottom" constant="12" id="UOJ-dW-cH1"/>
-                            <constraint firstItem="nSr-rO-cfg" firstAttribute="leading" secondItem="Ete-yV-Zmr" secondAttribute="leading" constant="8" id="UeR-v0-o6e"/>
-                            <constraint firstItem="lkY-sv-fIM" firstAttribute="top" secondItem="Ete-yV-Zmr" secondAttribute="top" constant="16" id="VJB-wl-qEi"/>
-                            <constraint firstAttribute="trailing" secondItem="IbI-aP-bF4" secondAttribute="trailing" constant="8" id="gVV-bY-Lue"/>
-                            <constraint firstItem="fFK-jP-uqC" firstAttribute="top" secondItem="lkY-sv-fIM" secondAttribute="bottom" constant="16" id="l8K-FN-5gI"/>
+                            <constraint firstItem="nSr-rO-cfg" firstAttribute="leading" secondItem="lkY-sv-fIM" secondAttribute="trailing" constant="16" id="2sP-8i-rhM"/>
+                            <constraint firstAttribute="trailing" secondItem="nSr-rO-cfg" secondAttribute="trailing" constant="8" id="8Il-ap-DqK"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lkY-sv-fIM" secondAttribute="bottom" constant="16" id="8TW-tv-wHe"/>
+                            <constraint firstAttribute="trailing" secondItem="fFK-jP-uqC" secondAttribute="trailing" constant="8" id="A9m-yZ-kEa"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IbI-aP-bF4" secondAttribute="bottom" constant="16" id="AFh-sB-f6m"/>
+                            <constraint firstAttribute="trailing" secondItem="IbI-aP-bF4" secondAttribute="trailing" constant="8" id="D4b-58-B1O"/>
+                            <constraint firstItem="lkY-sv-fIM" firstAttribute="top" secondItem="Ete-yV-Zmr" secondAttribute="top" constant="16" id="TSK-jX-m7z"/>
+                            <constraint firstItem="lkY-sv-fIM" firstAttribute="leading" secondItem="Ete-yV-Zmr" secondAttribute="leading" constant="8" id="dhA-0i-xFt"/>
+                            <constraint firstItem="IbI-aP-bF4" firstAttribute="leading" secondItem="lkY-sv-fIM" secondAttribute="trailing" constant="16" id="hbk-7n-Dbr"/>
+                            <constraint firstItem="nSr-rO-cfg" firstAttribute="top" secondItem="fFK-jP-uqC" secondAttribute="bottom" constant="4" id="hz0-um-INS"/>
+                            <constraint firstItem="IbI-aP-bF4" firstAttribute="top" secondItem="nSr-rO-cfg" secondAttribute="bottom" constant="4" id="i2c-pJ-jHJ"/>
+                            <constraint firstItem="fFK-jP-uqC" firstAttribute="top" secondItem="lkY-sv-fIM" secondAttribute="top" id="je2-DZ-CCS"/>
+                            <constraint firstItem="fFK-jP-uqC" firstAttribute="leading" secondItem="lkY-sv-fIM" secondAttribute="trailing" constant="16" id="lfm-HO-Y1t"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -80,7 +81,7 @@
                 <outlet property="priceLabel" destination="IbI-aP-bF4" id="8wQ-BS-y6K"/>
                 <outlet property="titleLabel" destination="fFK-jP-uqC" id="ffs-nn-ZV2"/>
             </connections>
-            <point key="canvasLocation" x="-49.275362318840585" y="219.64285714285714"/>
+            <point key="canvasLocation" x="-20.289855072463769" y="144.30803571428569"/>
         </tableViewCell>
     </objects>
     <resources>
