@@ -29,8 +29,6 @@ extension ProductListController {
         super.viewDidLoad()
         
         productListTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
-//        productListTableView.rowHeight = UITableView.automaticDimension;
-//        productListTableView.estimatedRowHeight = 44.0;
     }
     
     override func viewWillAppear(_ animated: Bool) {        
@@ -97,6 +95,16 @@ extension ProductListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedProduct = products[indexPath.row]
         
-//        performSegue(withIdentifier: "goToEditNote", sender: self)
+        performSegue(withIdentifier: "goToProduct", sender: self)
+    }
+}
+
+//MARK: - Override methods
+extension ProductListController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToProduct",
+            let productDetail = segue.destination as? ProductDetailController {
+            productDetail.displayProduct = selectedProduct
+        }
     }
 }

@@ -39,11 +39,73 @@
                     <navigationItem key="navigationItem" title="Товары" id="tE9-CB-1O3"/>
                     <connections>
                         <outlet property="productListTableView" destination="cf1-qw-meI" id="Zwt-E4-crl"/>
+                        <segue destination="Nxm-sk-yX3" kind="show" identifier="goToProduct" id="YNH-dC-INb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="112.89355322338831"/>
+        </scene>
+        <!--Детали товара-->
+        <scene sceneID="v2b-1T-Lhu">
+            <objects>
+                <viewController title="Детали товара" id="Nxm-sk-yX3" customClass="ProductDetailController" customModule="Horse_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cJh-CM-EcK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ногавки анатомические передние" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0W-sw-Adl">
+                                <rect key="frame" x="16" y="80" width="222" height="41.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORTON Light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTx-Y6-K16">
+                                <rect key="frame" x="16" y="129.5" width="343" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="₽3250" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3W-NK-6sM">
+                                <rect key="frame" x="311.5" y="80" width="47.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="9be-f6-6Ve">
+                                <rect key="frame" x="16" y="163" width="343" height="193"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9be-f6-6Ve" secondAttribute="height" multiplier="16:9" id="fws-zc-jqZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="exj-W6-UK2" firstAttribute="trailing" secondItem="sTx-Y6-K16" secondAttribute="trailing" constant="16" id="IOk-9x-fAO"/>
+                            <constraint firstItem="9be-f6-6Ve" firstAttribute="leading" secondItem="exj-W6-UK2" secondAttribute="leading" constant="16" id="LOO-xT-A6o"/>
+                            <constraint firstItem="c3W-NK-6sM" firstAttribute="top" secondItem="exj-W6-UK2" secondAttribute="top" constant="16" id="Ma7-Vm-wRy"/>
+                            <constraint firstItem="sTx-Y6-K16" firstAttribute="leading" secondItem="exj-W6-UK2" secondAttribute="leading" constant="16" id="Q7g-Q3-WqE"/>
+                            <constraint firstItem="exj-W6-UK2" firstAttribute="trailing" secondItem="c3W-NK-6sM" secondAttribute="trailing" constant="16" id="QbT-2S-NFB"/>
+                            <constraint firstItem="t0W-sw-Adl" firstAttribute="top" secondItem="exj-W6-UK2" secondAttribute="top" constant="16" id="RSc-T1-kuU"/>
+                            <constraint firstItem="exj-W6-UK2" firstAttribute="trailing" secondItem="9be-f6-6Ve" secondAttribute="trailing" constant="16" id="b2k-ww-mnc"/>
+                            <constraint firstItem="sTx-Y6-K16" firstAttribute="top" secondItem="t0W-sw-Adl" secondAttribute="bottom" constant="8" id="dEf-Wu-8Pe"/>
+                            <constraint firstItem="t0W-sw-Adl" firstAttribute="leading" secondItem="exj-W6-UK2" secondAttribute="leading" constant="16" id="lKP-vz-oXj"/>
+                            <constraint firstItem="9be-f6-6Ve" firstAttribute="top" secondItem="sTx-Y6-K16" secondAttribute="bottom" constant="16" id="vmW-uE-GGV"/>
+                            <constraint firstItem="c3W-NK-6sM" firstAttribute="top" secondItem="t0W-sw-Adl" secondAttribute="top" id="x7i-fZ-wgW"/>
+                            <constraint firstItem="c3W-NK-6sM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t0W-sw-Adl" secondAttribute="trailing" constant="8" id="zKi-mg-TH0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="exj-W6-UK2"/>
+                    </view>
+                    <connections>
+                        <outlet property="manufacturerLabel" destination="sTx-Y6-K16" id="xeV-Hg-qgj"/>
+                        <outlet property="pictureImageView" destination="9be-f6-6Ve" id="wSj-7U-HMc"/>
+                        <outlet property="priceLabel" destination="c3W-NK-6sM" id="f8T-cp-TLG"/>
+                        <outlet property="titleLabel" destination="t0W-sw-Adl" id="VZ1-Hs-pLm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhn-Oy-yFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y6T-cE-XUC">
@@ -64,4 +126,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="771.36431784107947"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="noimage" width="42.5" height="42.5"/>
+    </resources>
 </document>
