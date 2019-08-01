@@ -12,6 +12,9 @@
 		FFEA88E122F2F62400E4A590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88DF22F2F62400E4A590 /* Main.storyboard */; };
 		FFEA88E322F2F62800E4A590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88E222F2F62800E4A590 /* Assets.xcassets */; };
 		FFEA88E622F2F62800E4A590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88E422F2F62800E4A590 /* LaunchScreen.storyboard */; };
+		FFEA88EF22F2F84C00E4A590 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88EE22F2F84C00E4A590 /* Product.swift */; };
+		FFEA88F122F2FF5D00E4A590 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F022F2FF5D00E4A590 /* Store.swift */; };
+		FFEA88F322F302E200E4A590 /* ProductExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F222F302E200E4A590 /* ProductExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		FFEA88E222F2F62800E4A590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFEA88E522F2F62800E4A590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFEA88E722F2F62800E4A590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFEA88EE22F2F84C00E4A590 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		FFEA88F022F2FF5D00E4A590 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		FFEA88F222F302E200E4A590 /* ProductExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		FFEA88DA22F2F62400E4A590 /* Horse Shop */ = {
 			isa = PBXGroup;
 			children = (
+				FFEA88ED22F2F82500E4A590 /* Model */,
 				FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */,
 				FFEA88DD22F2F62400E4A590 /* ViewController.swift */,
 				FFEA88DF22F2F62400E4A590 /* Main.storyboard */,
@@ -62,6 +69,16 @@
 				FFEA88E722F2F62800E4A590 /* Info.plist */,
 			);
 			path = "Horse Shop";
+			sourceTree = "<group>";
+		};
+		FFEA88ED22F2F82500E4A590 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFEA88EE22F2F84C00E4A590 /* Product.swift */,
+				FFEA88F022F2FF5D00E4A590 /* Store.swift */,
+				FFEA88F222F302E200E4A590 /* ProductExtensions.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFEA88DE22F2F62400E4A590 /* ViewController.swift in Sources */,
+				FFEA88F322F302E200E4A590 /* ProductExtensions.swift in Sources */,
 				FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */,
+				FFEA88EF22F2F84C00E4A590 /* Product.swift in Sources */,
+				FFEA88F122F2FF5D00E4A590 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
