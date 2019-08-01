@@ -22,6 +22,10 @@ extension Product {
             dict["image"] = image
         }
         
+        if let description = self.description {
+            dict["description"] = description
+        }
+        
         return dict
     }
     
@@ -39,6 +43,7 @@ extension Product {
         var price: Double = 0.0
         var manufacturer: String = ""
         var image: String?
+        var description: String?
         
         for (key, value) in json {
             switch key {
@@ -72,6 +77,12 @@ extension Product {
                 }
                 
                 image = imageString
+            case "description":
+                guard let descriptionString = value as? String else {
+                    return nil
+                }
+                
+                description = descriptionString
             default:
                 break
             }
@@ -82,7 +93,8 @@ extension Product {
             title: title,
             price: price,
             manufacturer: manufacturer,
-            image: image
+            image: image,
+            description: description
         )
     }
 }

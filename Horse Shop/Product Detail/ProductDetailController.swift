@@ -16,12 +16,21 @@ class ProductDetailController: UIViewController {
     @IBOutlet weak var manufacturerLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var pictureImageView: UIImageView!
+    @IBOutlet weak var descriptionWrapperView: UIView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pictureImageView.layer.cornerRadius = 5
+        
+        descriptionWrapperView.layer.borderColor = UIColor.lightGray.cgColor
+        descriptionWrapperView.layer.borderWidth = 1
+        descriptionWrapperView.layer.cornerRadius = 5
+        
         titleLabel.text = displayProduct.title
-        manufacturerLabel.text = displayProduct.title
+        manufacturerLabel.text = displayProduct.manufacturer
         priceLabel.text = "₽\(displayProduct.price)"
+        descriptionTextView.text = displayProduct.description
     }
 }
