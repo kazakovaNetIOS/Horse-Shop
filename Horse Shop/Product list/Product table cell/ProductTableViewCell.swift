@@ -19,8 +19,7 @@ class ProductTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cellWrapperView.layer.borderColor = UIColor.lightGray.cgColor
-        cellWrapperView.layer.borderWidth = 1
         cellWrapperView.layer.cornerRadius = 5
-    }    
+//        pictureImageView.contentMode = .scaleAspectFit
+    }
 }

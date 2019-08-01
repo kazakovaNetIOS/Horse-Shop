@@ -11,6 +11,10 @@ import Foundation
 class Store {
     public private(set) var products: [Product] = [Product]()
     
+    init() {
+        loadDummyData()
+    }
+    
     public func add(product: Product) {
         if let index = products.firstIndex(where: { $0.uid == product.uid }) {
             products[index] = product
@@ -53,7 +57,7 @@ class Store {
         }
         
         do {
-            guard let jsData = try String(contentsOf: fileUrl).data(using: .utf8) else { return }
+            let jsData = try Data(contentsOf: fileUrl)
             
             let anyJsonObject = try JSONSerialization.jsonObject(with: jsData, options: [])
             
@@ -77,7 +81,7 @@ class Store {
         }
         
         var isDir: ObjCBool = false
-        let dirUrl = path.appendingPathComponent("store")
+        let dirUrl = path.appendingPathComponent("Stores")
         
         if !FileManager.default.fileExists(atPath: dirUrl.path, isDirectory: &isDir), !isDir.boolValue {
             do {
@@ -88,7 +92,7 @@ class Store {
             }
         }
         
-        let fileUrl = dirUrl.appendingPathComponent("Stores")
+        let fileUrl = dirUrl.appendingPathComponent("store")
         
         if !FileManager.default.fileExists(atPath: fileUrl.path) {
             if !FileManager.default.createFile(atPath: fileUrl.path, contents: nil, attributes: nil) {
@@ -97,5 +101,15 @@ class Store {
         }
         
         return fileUrl
+    }
+    
+    private func loadDummyData() {
+        add(product: Product(uid: "1", title: "Ногавки анатомические передние", price: 3250, manufacturer: "NORTON Light", image: nil))
+        add(product: Product(uid: "2", title: "Ногавки анатомические задние", price: 3750, manufacturer: "NORTON Light", image: nil))
+        add(product: Product(uid: "3", title: "Трензель литой строгий", price: 1550, manufacturer: "Feeling", image: nil))
+        add(product: Product(uid: "4", title: "Недоуздок жеребячий", price: 490, manufacturer: "Pfiff", image: nil))
+        add(product: Product(uid: "5", title: "Седло Seneca", price: 79990, manufacturer: "Kentaur", image: nil))
+        
+        saveToFile()
     }
 }
