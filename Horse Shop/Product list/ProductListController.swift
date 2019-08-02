@@ -28,6 +28,8 @@ extension ProductListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(addButtonTapped(_:)))
+        
         productListTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
     }
     
@@ -112,5 +114,19 @@ extension ProductListController {
             let productDetail = segue.destination as? ProductDetailController {
             productDetail.displayProduct = selectedProduct
         }
+        
+        if segue.identifier == "goToEditProduct",
+            let productEdit = segue.destination as? ProductEditController {
+            productEdit.store = store
+        }
+    }
+}
+
+//MARK: - Selector methods
+extension ProductListController {
+    @objc func addButtonTapped(_ sender: UIButton) {
+        print("Switch to product editing")
+        
+        self.performSegue(withIdentifier: "goToEditProduct", sender: self)
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF3937EE22F49DF100CD3540 /* Store.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF3937ED22F49DF100CD3540 /* Store.plist */; };
+		FF3937F122F4ACC800CD3540 /* ProductEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3937F022F4ACC800CD3540 /* ProductEditController.swift */; };
 		FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */; };
 		FFEA88DE22F2F62400E4A590 /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DD22F2F62400E4A590 /* ProductListController.swift */; };
 		FFEA88E122F2F62400E4A590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88DF22F2F62400E4A590 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		FF3937ED22F49DF100CD3540 /* Store.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Store.plist; sourceTree = "<group>"; };
+		FF3937F022F4ACC800CD3540 /* ProductEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditController.swift; sourceTree = "<group>"; };
 		FFEA88D822F2F62400E4A590 /* Horse Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horse Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFEA88DD22F2F62400E4A590 /* ProductListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF3937EF22F4ACA900CD3540 /* Product edit */ = {
+			isa = PBXGroup;
+			children = (
+				FF3937F022F4ACC800CD3540 /* ProductEditController.swift */,
+			);
+			path = "Product edit";
+			sourceTree = "<group>";
+		};
 		FFEA88CF22F2F62400E4A590 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		FFEA88DA22F2F62400E4A590 /* Horse Shop */ = {
 			isa = PBXGroup;
 			children = (
+				FF3937EF22F4ACA900CD3540 /* Product edit */,
 				FF3937ED22F49DF100CD3540 /* Store.plist */,
 				FFEA891B22F3903000E4A590 /* Assets.xcassets */,
 				FFEA891822F35C1500E4A590 /* Product Detail */,
@@ -239,6 +250,7 @@
 				FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */,
 				FFEA891622F3153500E4A590 /* ProductTableViewCell.swift in Sources */,
 				FFEA88EF22F2F84C00E4A590 /* Product.swift in Sources */,
+				FF3937F122F4ACC800CD3540 /* ProductEditController.swift in Sources */,
 				FFEA890822F3053E00E4A590 /* AsyncOperation.swift in Sources */,
 				FFEA88F122F2FF5D00E4A590 /* Store.swift in Sources */,
 			);
