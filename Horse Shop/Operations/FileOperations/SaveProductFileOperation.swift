@@ -20,7 +20,7 @@ class SaveProductFileOperation: BaseFileOperation {
     
     override func main() {
         store.add(product: product)
-        store.saveToFile()
+        store.saveToJsonFile()
         
         print("Save products to file completed")
         

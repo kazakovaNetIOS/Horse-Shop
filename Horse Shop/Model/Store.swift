@@ -12,7 +12,7 @@ class Store {
     public private(set) var products: [Product] = [Product]()
     
     init() {
-        loadDummyData()
+        loadFromPlist()
     }
     
     public func add(product: Product) {
@@ -33,7 +33,7 @@ class Store {
         }
     }
     
-    public func saveToFile() {
+    public func saveToJsonFile() {
         guard let fileUrl = getStoreFilePath() else {
             return
         }
@@ -51,7 +51,7 @@ class Store {
         }
     }
     
-    public func loadFromFile() {
+    public func loadFromJsonFile() {
         guard let fileUrl = getStoreFilePath() else {
             return
         }
@@ -75,24 +75,41 @@ class Store {
         }
     }
     
+    private func loadFromPlist() {
+        guard let filePath = Bundle.main.path(forResource: "Store", ofType: "plist") else {
+            return
+        }
+        
+        if let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) {
+            let decoder = PropertyListDecoder()
+            do {
+                products = try decoder.decode([Product].self, from: data)
+            } catch {
+                print("Error decoding product array, \(error)")
+            }
+        }
+    }
+    
     private func getStoreFilePath() -> URL? {
         guard let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {
             return nil
         }
         
+        let directoryName = "HorseShopStore"
+        let filename = "store.json"
         var isDir: ObjCBool = false
-        let dirUrl = path.appendingPathComponent("Stores")
+        let dirUrl = path.appendingPathComponent(directoryName)
         
         if !FileManager.default.fileExists(atPath: dirUrl.path, isDirectory: &isDir), !isDir.boolValue {
             do {
                 try FileManager.default.createDirectory(at: dirUrl, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("Error creating directory \"store\", \(error)")
+                print("Error creating directory \"\(directoryName)\", \(error)")
                 return nil
             }
         }
         
-        let fileUrl = dirUrl.appendingPathComponent("store")
+        let fileUrl = dirUrl.appendingPathComponent(filename)
         
         if !FileManager.default.fileExists(atPath: fileUrl.path) {
             if !FileManager.default.createFile(atPath: fileUrl.path, contents: nil, attributes: nil) {
@@ -101,15 +118,5 @@ class Store {
         }
         
         return fileUrl
-    }
-    
-    private func loadDummyData() {
-        add(product: Product(uid: "1", title: "Ногавки анатомические передние", price: 3250, manufacturer: "NORTON Light", image: "nogavki", description: "Эти рабочие ногавки на каждый день предлагают простую, но эффективную защиту ног лошади. Новый стиль этих неопреновых ногавок с застежками-липучками идеально подходит для тренировок. Неопрен снабжен вентиляционными отверстиями для усиления циркуляции воздуха. Эти ногавки легко надеть и они выглядят также стильно, как бинты."))
-        add(product: Product(uid: "2", title: "Ногавки анатомические задние", price: 3750, manufacturer: "NORTON Light", image: "nogavki", description: "Эти рабочие ногавки на каждый день предлагают простую, но эффективную защиту ног лошади. Новый стиль этих неопреновых ногавок с застежками-липучками идеально подходит для тренировок. Неопрен снабжен вентиляционными отверстиями для усиления циркуляции воздуха. Эти ногавки легко надеть и они выглядят также стильно, как бинты."))
-        add(product: Product(uid: "3", title: "Трензель литой строгий", price: 1550, manufacturer: "Feeling", image: "trenzel", description: "Распространенный вид трензеля, который оказывает прямое давление без рычагов. При натяжении повода создается воздействие на середину языка и края губ. Трензель имеет цельную литую структуру (не дутый), поэтому тяжелее обычного дутого и будет оказывать более сильное давление на рот лошади. Толщина грызла 14мм является довольно тонкой для современных трензелей, имеет небольшую площадь контакта, и будет оказывать дополнительное давление. Материал нержавеющая сталь."))
-        add(product: Product(uid: "4", title: "Недоуздок жеребячий", price: 490, manufacturer: "Pfiff", image: "nedouzdok", description: "Недоуздок сделан из прочного двуслойного нейлона с крепкой фурнитурой. Цвет: коричневый, синий-голубой, серый, сине-розовый"))
-        add(product: Product(uid: "5", title: "Седло Seneca", price: 79990, manufacturer: "Kentaur", image: "sedlo", description: "Легкое, универсальное седло с пластиковым ленчиком. Спинные подушки набиты шерстью. Ширина ленчика: М = 30 см на среднюю спину лошади, W = 32 см на средне-широкую. Размер 17,5” - для всадника весом от 50 до 70 кг."))
-        
-        saveToFile()
     }
 }

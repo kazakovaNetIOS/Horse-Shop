@@ -20,7 +20,7 @@ class RemoveProductFileOperation: BaseFileOperation {
     
     override func main() {
         store.remove(with: productId)
-        store.saveToFile()
+        store.saveToJsonFile()
         
         print("Remove product from file completed")
         

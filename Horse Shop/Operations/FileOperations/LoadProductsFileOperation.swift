@@ -17,7 +17,7 @@ class LoadProductsFileOperation: BaseFileOperation {
     }
     
     override func main() {
-        store.loadFromFile()
+        store.loadFromJsonFile()
         result = store.products
         
         print("Load products from file completed")

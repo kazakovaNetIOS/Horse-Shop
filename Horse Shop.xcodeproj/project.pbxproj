@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF3937EE22F49DF100CD3540 /* Store.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF3937ED22F49DF100CD3540 /* Store.plist */; };
 		FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */; };
 		FFEA88DE22F2F62400E4A590 /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DD22F2F62400E4A590 /* ProductListController.swift */; };
 		FFEA88E122F2F62400E4A590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88DF22F2F62400E4A590 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF3937ED22F49DF100CD3540 /* Store.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Store.plist; sourceTree = "<group>"; };
 		FFEA88D822F2F62400E4A590 /* Horse Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horse Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFEA88DD22F2F62400E4A590 /* ProductListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		FFEA88DA22F2F62400E4A590 /* Horse Shop */ = {
 			isa = PBXGroup;
 			children = (
+				FF3937ED22F49DF100CD3540 /* Store.plist */,
 				FFEA891B22F3903000E4A590 /* Assets.xcassets */,
 				FFEA891822F35C1500E4A590 /* Product Detail */,
 				FFEA890E22F312DF00E4A590 /* Product list */,
@@ -211,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3937EE22F49DF100CD3540 /* Store.plist in Resources */,
 				FFEA88E622F2F62800E4A590 /* LaunchScreen.storyboard in Resources */,
 				FFEA891722F3153500E4A590 /* ProductTableViewCell.xib in Resources */,
 				FFEA891C22F3903000E4A590 /* Assets.xcassets in Resources */,
