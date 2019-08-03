@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SaveProductFileOperation: BaseFileOperation {
+class SaveProductJSONOperation: BaseFileOperation {
     
     private let product: Product
     

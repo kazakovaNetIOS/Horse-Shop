@@ -33,27 +33,10 @@ extension ProductListController {
         productListTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
     }
     
-    override func viewWillAppear(_ animated: Bool) {        
-        let loadProducts = LoadProductsFileOperation(store: store)
-        loadProducts.completionBlock = {
-            print("Downloading products completed. Uploaded \(loadProducts.result?.count ?? 0) products")
-            
-            if let loadedProducts = loadProducts.result {
-                self.products = loadedProducts
-            } else {
-                
-            }
-            
-            OperationQueue.main.addOperation {
-                print("Updating the table after loading data")
-                
-                self.productListTableView.reloadData()
-                
-                super.viewWillAppear(animated)
-            }
+    override func viewWillAppear(_ animated: Bool) {
+        loadProducts {
+            super.viewWillAppear(animated)
         }
-        
-        OperationQueue().addOperation(loadProducts)
     }
 }
 
@@ -118,6 +101,7 @@ extension ProductListController {
         if segue.identifier == "goToEditProduct",
             let productEdit = segue.destination as? ProductEditController {
             productEdit.store = store
+            productEdit.delegate = self
         }
     }
 }
@@ -128,5 +112,39 @@ extension ProductListController {
         print("Switch to product editing")
         
         self.performSegue(withIdentifier: "goToEditProduct", sender: self)
+    }
+}
+
+//MARK: - Data load
+extension ProductListController {
+    fileprivate func loadProducts(completion: @escaping ()->Void) {
+        products = []
+        let loadProducts = LoadProductsFileOperation(store: store)
+        loadProducts.completionBlock = {
+            print("Downloading products completed. Uploaded \(loadProducts.result?.count ?? 0) products")
+            
+            if let loadedProducts = loadProducts.result {
+                self.products = loadedProducts
+            }
+            
+            OperationQueue.main.addOperation {
+                print("Updating the table after loading data")
+                
+                self.productListTableView.reloadData()
+                
+                completion()
+            }
+        }
+        
+        OperationQueue().addOperation(loadProducts)
+    }
+}
+
+//MARK: - ProductEditDelegate
+extension ProductListController: ProductEditDelegate {
+    func productWillSave() {
+        loadProducts {
+            print("After adding")
+        }
     }
 }

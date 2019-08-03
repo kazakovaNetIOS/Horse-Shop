@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol ProductEditDelegate {
+    func productWillSave()
+}
+
 class ProductEditController: UIViewController {
 
     var store: Store!
+    var delegate: ProductEditDelegate!
     
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -19,8 +24,20 @@ class ProductEditController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    private let pickerController = UIImagePickerController()
+    
+    private var imageUrl: NSURL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pictureTapped(tapGestureRecognizer:)))
+        pictureImageView.isUserInteractionEnabled = true
+        pictureImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        pickerController.delegate = self
+        pickerController.mediaTypes = ["public.image"]
+        pickerController.sourceType = .photoLibrary
 
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
@@ -47,11 +64,9 @@ class ProductEditController: UIViewController {
 //MARK: - Selector methods
 extension ProductEditController {
     @objc func saveButtonTapped(_ sender: UIButton) {
-        guard let price = Double(priceTextField.text!) else {
-            priceTextField.layer.borderWidth = 1
-            priceTextField.layer.cornerRadius = 5
-            priceTextField.layer.borderColor = UIColor.red.cgColor
-            return
+        var price = 0.0
+        if let inputPrice = Double(priceTextField.text!) {
+            price = inputPrice
         }
         
         let newProduct = Product(title: titleTextField.text!,
@@ -60,14 +75,16 @@ extension ProductEditController {
                                  image: nil,
                                  description: descriptionTextView.text)
         
-        let saveProduct = SaveProductFileOperation(product: newProduct, store: store)
+        let saveProduct = SaveProductOperation(product: newProduct, store: store, imageUrl: imageUrl, fileQueue: OperationQueue(), imageQueue: OperationQueue())
         saveProduct.completionBlock = {
             OperationQueue.main.addOperation {
-                self.navigationController?.popViewController(animated: true)
-            }
+                self.delegate.productWillSave()
+            }            
         }
         
         OperationQueue().addOperation(saveProduct)
+        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func keyboardWillShowOrHide(_ notification: Notification) {
@@ -81,4 +98,26 @@ extension ProductEditController {
             })
         }
     }
+    
+    @objc func pictureTapped(tapGestureRecognizer: UITapGestureRecognizer) {        
+        present(pickerController, animated: true, completion: nil)
+    }
+}
+
+//MARK: - Image picker delegate methods
+extension ProductEditController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImageURL = info[UIImagePickerController.InfoKey.imageURL] as? NSURL,
+            let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            self.imageUrl = pickedImageURL
+            pictureImageView.image = image
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - IBActions
+extension ProductEditController {
+    
 }

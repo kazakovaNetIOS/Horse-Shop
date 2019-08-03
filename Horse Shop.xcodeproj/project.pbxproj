@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FF3937EE22F49DF100CD3540 /* Store.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF3937ED22F49DF100CD3540 /* Store.plist */; };
 		FF3937F122F4ACC800CD3540 /* ProductEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3937F022F4ACC800CD3540 /* ProductEditController.swift */; };
+		FF3937F322F5D00700CD3540 /* SaveProductImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3937F222F5D00700CD3540 /* SaveProductImageOperation.swift */; };
+		FF3937F522F5D10C00CD3540 /* SaveProductOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3937F422F5D10C00CD3540 /* SaveProductOperation.swift */; };
 		FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */; };
 		FFEA88DE22F2F62400E4A590 /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88DD22F2F62400E4A590 /* ProductListController.swift */; };
 		FFEA88E122F2F62400E4A590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88DF22F2F62400E4A590 /* Main.storyboard */; };
@@ -16,7 +18,7 @@
 		FFEA88EF22F2F84C00E4A590 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88EE22F2F84C00E4A590 /* Product.swift */; };
 		FFEA88F122F2FF5D00E4A590 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F022F2FF5D00E4A590 /* Store.swift */; };
 		FFEA88F322F302E200E4A590 /* ProductExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F222F302E200E4A590 /* ProductExtensions.swift */; };
-		FFEA890222F3053E00E4A590 /* SaveProductFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F622F3053E00E4A590 /* SaveProductFileOperation.swift */; };
+		FFEA890222F3053E00E4A590 /* SaveProductJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F622F3053E00E4A590 /* SaveProductJSONOperation.swift */; };
 		FFEA890322F3053E00E4A590 /* LoadProductsFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F722F3053E00E4A590 /* LoadProductsFileOperation.swift */; };
 		FFEA890422F3053E00E4A590 /* BaseFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F822F3053E00E4A590 /* BaseFileOperation.swift */; };
 		FFEA890522F3053E00E4A590 /* RemoveProductFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F922F3053E00E4A590 /* RemoveProductFileOperation.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		FF3937ED22F49DF100CD3540 /* Store.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Store.plist; sourceTree = "<group>"; };
 		FF3937F022F4ACC800CD3540 /* ProductEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditController.swift; sourceTree = "<group>"; };
+		FF3937F222F5D00700CD3540 /* SaveProductImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProductImageOperation.swift; sourceTree = "<group>"; };
+		FF3937F422F5D10C00CD3540 /* SaveProductOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProductOperation.swift; sourceTree = "<group>"; };
 		FFEA88D822F2F62400E4A590 /* Horse Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horse Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEA88DB22F2F62400E4A590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFEA88DD22F2F62400E4A590 /* ProductListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
@@ -39,7 +43,7 @@
 		FFEA88EE22F2F84C00E4A590 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FFEA88F022F2FF5D00E4A590 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		FFEA88F222F302E200E4A590 /* ProductExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExtensions.swift; sourceTree = "<group>"; };
-		FFEA88F622F3053E00E4A590 /* SaveProductFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProductFileOperation.swift; sourceTree = "<group>"; };
+		FFEA88F622F3053E00E4A590 /* SaveProductJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProductJSONOperation.swift; sourceTree = "<group>"; };
 		FFEA88F722F3053E00E4A590 /* LoadProductsFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadProductsFileOperation.swift; sourceTree = "<group>"; };
 		FFEA88F822F3053E00E4A590 /* BaseFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFileOperation.swift; sourceTree = "<group>"; };
 		FFEA88F922F3053E00E4A590 /* RemoveProductFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveProductFileOperation.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			children = (
 				FFEA88F522F3053E00E4A590 /* FileOperations */,
 				FFEA88FC22F3053E00E4A590 /* AsyncOperation.swift */,
+				FF3937F422F5D10C00CD3540 /* SaveProductOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -126,8 +131,9 @@
 			children = (
 				FFEA88F822F3053E00E4A590 /* BaseFileOperation.swift */,
 				FFEA88F722F3053E00E4A590 /* LoadProductsFileOperation.swift */,
-				FFEA88F622F3053E00E4A590 /* SaveProductFileOperation.swift */,
+				FFEA88F622F3053E00E4A590 /* SaveProductJSONOperation.swift */,
 				FFEA88F922F3053E00E4A590 /* RemoveProductFileOperation.swift */,
+				FF3937F222F5D00700CD3540 /* SaveProductImageOperation.swift */,
 			);
 			path = FileOperations;
 			sourceTree = "<group>";
@@ -240,7 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFEA890222F3053E00E4A590 /* SaveProductFileOperation.swift in Sources */,
+				FFEA890222F3053E00E4A590 /* SaveProductJSONOperation.swift in Sources */,
 				FFEA88DE22F2F62400E4A590 /* ProductListController.swift in Sources */,
 				FFEA890422F3053E00E4A590 /* BaseFileOperation.swift in Sources */,
 				FFEA890522F3053E00E4A590 /* RemoveProductFileOperation.swift in Sources */,
@@ -248,6 +254,8 @@
 				FFEA88F322F302E200E4A590 /* ProductExtensions.swift in Sources */,
 				FFEA890322F3053E00E4A590 /* LoadProductsFileOperation.swift in Sources */,
 				FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */,
+				FF3937F322F5D00700CD3540 /* SaveProductImageOperation.swift in Sources */,
+				FF3937F522F5D10C00CD3540 /* SaveProductOperation.swift in Sources */,
 				FFEA891622F3153500E4A590 /* ProductTableViewCell.swift in Sources */,
 				FFEA88EF22F2F84C00E4A590 /* Product.swift in Sources */,
 				FF3937F122F4ACC800CD3540 /* ProductEditController.swift in Sources */,

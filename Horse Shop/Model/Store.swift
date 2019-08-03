@@ -34,7 +34,7 @@ class Store {
     }
     
     public func saveToJsonFile() {
-        guard let fileUrl = getStoreFilePath() else {
+        guard let fileUrl = getStoreJsonFilePath() else {
             return
         }
         
@@ -52,7 +52,7 @@ class Store {
     }
     
     public func loadFromJsonFile() {
-        guard let fileUrl = getStoreFilePath() else {
+        guard let fileUrl = getStoreJsonFilePath() else {
             return
         }
         
@@ -90,8 +90,24 @@ class Store {
         }
     }
     
-    private func getStoreFilePath() -> URL? {
-        guard let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {
+    public func saveImageToCache(imageURL: NSURL, imageName: String) -> String? {
+        guard let pathExtension = imageURL.pathExtension,
+            let fileUrl = getStoreImagesFilePath(imageName: "\(imageName).\(pathExtension)") else {
+            return nil
+        }
+        
+        do {
+            let jsdata = try Data(contentsOf: imageURL as URL)
+            try jsdata.write(to: fileUrl)
+            
+            return fileUrl.path
+        } catch {
+            return nil
+        }
+    }
+    
+    private func getStoreJsonFilePath() -> URL? {
+        guard let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }
         
@@ -110,6 +126,35 @@ class Store {
         }
         
         let fileUrl = dirUrl.appendingPathComponent(filename)
+        
+        if !FileManager.default.fileExists(atPath: fileUrl.path) {
+            if !FileManager.default.createFile(atPath: fileUrl.path, contents: nil, attributes: nil) {
+                return nil
+            }
+        }
+        
+        return fileUrl
+    }
+    
+    private func getStoreImagesFilePath(imageName: String) -> URL? {
+        guard let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        
+        let directoryName = "HorseShopStore"
+        var isDir: ObjCBool = false
+        let dirUrl = path.appendingPathComponent(directoryName)
+        
+        if !FileManager.default.fileExists(atPath: dirUrl.path, isDirectory: &isDir), !isDir.boolValue {
+            do {
+                try FileManager.default.createDirectory(at: dirUrl, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print("Error creating directory \"\(directoryName)\", \(error)")
+                return nil
+            }
+        }
+        
+        let fileUrl = dirUrl.appendingPathComponent(imageName)
         
         if !FileManager.default.fileExists(atPath: fileUrl.path) {
             if !FileManager.default.createFile(atPath: fileUrl.path, contents: nil, attributes: nil) {
