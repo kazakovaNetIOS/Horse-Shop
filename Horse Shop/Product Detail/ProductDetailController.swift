@@ -21,7 +21,10 @@ class ProductDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
+    }
+    
+    private func setupView() {
         pictureImageView.layer.cornerRadius = 5
         
         descriptionWrapperView.layer.borderColor = UIColor.lightGray.cgColor

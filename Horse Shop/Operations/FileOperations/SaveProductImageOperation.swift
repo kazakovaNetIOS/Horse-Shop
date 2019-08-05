@@ -17,7 +17,6 @@ class SaveProductImageOperation: BaseFileOperation {
     init(imageUrl: NSURL, store: Store, productId: String) {
         self.imageUrl = imageUrl
         self.productId = productId
-        
         super.init(store: store)
     }
     

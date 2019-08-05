@@ -17,6 +17,9 @@ class ProductEditController: UIViewController {
     var store: Store!
     var delegate: ProductEditDelegate!
     
+    private let pickerController = UIImagePickerController()
+    private var imageUrl: NSURL?
+    
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var manufacturerTextField: UITextField!
@@ -24,13 +27,16 @@ class ProductEditController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    private let pickerController = UIImagePickerController()
-    
-    private var imageUrl: NSURL?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupView()
+        addObserver()
+    }
+}
+
+//MARK: - Setup UI
+extension ProductEditController {
+    private func setupView() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pictureTapped(tapGestureRecognizer:)))
         pictureImageView.isUserInteractionEnabled = true
         pictureImageView.addGestureRecognizer(tapGestureRecognizer)
@@ -38,13 +44,15 @@ class ProductEditController: UIViewController {
         pickerController.delegate = self
         pickerController.mediaTypes = ["public.image"]
         pickerController.sourceType = .photoLibrary
-
+        
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
         descriptionTextView.layer.cornerRadius = 5
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveButtonTapped(_:)))
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveButtonTapped))
+    }
+    
+    private func addObserver() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShowOrHide),
@@ -87,6 +95,14 @@ extension ProductEditController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func pictureTapped(tapGestureRecognizer: UITapGestureRecognizer) {        
+        present(pickerController, animated: true, completion: nil)
+    }
+}
+
+
+//MARK: - Keyboard methods
+extension ProductEditController {
     @objc private func keyboardWillShowOrHide(_ notification: Notification) {
         let keyBoard = notification.userInfo
         
@@ -98,14 +114,10 @@ extension ProductEditController {
             })
         }
     }
-    
-    @objc func pictureTapped(tapGestureRecognizer: UITapGestureRecognizer) {        
-        present(pickerController, animated: true, completion: nil)
-    }
 }
 
-//MARK: - Image picker delegate methods
-extension ProductEditController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//MARK: - UIImagePickerControllerDelegate
+extension ProductEditController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImageURL = info[UIImagePickerController.InfoKey.imageURL] as? NSURL,
             let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
@@ -117,7 +129,7 @@ extension ProductEditController: UIImagePickerControllerDelegate, UINavigationCo
     }
 }
 
-//MARK: - IBActions
-extension ProductEditController {
+//MARK: - UINavigationControllerDelegate
+extension ProductEditController: UINavigationControllerDelegate {
     
 }

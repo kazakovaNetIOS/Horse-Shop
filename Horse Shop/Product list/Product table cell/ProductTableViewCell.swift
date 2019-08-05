@@ -18,17 +18,20 @@ class ProductTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         cellWrapperView.layer.cornerRadius = 5
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        if selected { cellWrapperView.backgroundColor = .white }
+        if selected {
+            cellWrapperView.backgroundColor = .white
+        }
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: true)
-        if highlighted { cellWrapperView.backgroundColor = .white }
+        if highlighted {
+            cellWrapperView.backgroundColor = .white
+        }
     }
 }

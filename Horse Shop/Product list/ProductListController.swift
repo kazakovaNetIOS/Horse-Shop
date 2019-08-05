@@ -23,24 +23,7 @@ class ProductListController: UIViewController {
     }
 }
 
-//MARK: - Lifecycle methods
-extension ProductListController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(addButtonTapped(_:)))
-        
-        productListTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        loadProducts {
-            super.viewWillAppear(animated)
-        }
-    }
-}
-
-//MARK: - Table view data source methods
+//MARK: - UITableViewDataSource
 extension ProductListController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
@@ -81,7 +64,7 @@ extension ProductListController: UITableViewDataSource {
     }
 }
 
-//MARK: - Table view delegate methods
+//MARK: - UITableViewDelegate
 extension ProductListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedProduct = products[indexPath.row]
@@ -92,6 +75,19 @@ extension ProductListController: UITableViewDelegate {
 
 //MARK: - Override methods
 extension ProductListController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(addButtonTapped))
+        
+        productListTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadProducts {
+            super.viewWillAppear(animated)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToProduct",
             let productDetail = segue.destination as? ProductDetailController {
@@ -144,7 +140,7 @@ extension ProductListController {
 extension ProductListController: ProductEditDelegate {
     func productWillSave() {
         loadProducts {
-            print("After adding")
+            print("Product added to list")
         }
     }
 }

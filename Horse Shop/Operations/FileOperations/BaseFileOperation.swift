@@ -14,7 +14,6 @@ class BaseFileOperation: AsyncOperation {
     
     init(store: Store) {
         self.store = store
-        
         super.init()
     }
 }

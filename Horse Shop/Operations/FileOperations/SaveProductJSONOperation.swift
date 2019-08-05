@@ -14,7 +14,6 @@ class SaveProductJSONOperation: BaseFileOperation {
     
     init(product: Product, store: Store) {
         self.product = product
-        
         super.init(store: store)
     }
     

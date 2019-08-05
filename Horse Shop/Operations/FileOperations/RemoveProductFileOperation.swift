@@ -14,7 +14,6 @@ class RemoveProductFileOperation: BaseFileOperation {
     
     init(productId: String, store: Store) {
         self.productId = productId
-        
         super.init(store: store)
     }
     

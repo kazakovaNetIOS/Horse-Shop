@@ -15,9 +15,7 @@ class SaveProductOperation: AsyncOperation {
          imageUrl: NSURL?,
          fileQueue: OperationQueue,
          imageQueue: OperationQueue) {
-        
         super.init()
-        
         if let imageUrl = imageUrl {
             saveProductWithImage(imageUrl, store, product, fileQueue, imageQueue)
         } else {
