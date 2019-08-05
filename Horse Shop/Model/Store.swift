@@ -9,13 +9,17 @@
 import Foundation
 
 class Store {
-    public private(set) var products: [Product] = [Product]()
+    private(set) var products: [Product] = [Product]()
     
     init() {
         loadFromPlist()
     }
-    
-    public func add(product: Product) {
+}
+
+//MARK: - Public interface
+
+extension Store {
+    func add(product: Product) {
         if let index = products.firstIndex(where: { $0.uid == product.uid }) {
             products[index] = product
         } else {
@@ -23,20 +27,18 @@ class Store {
         }
     }
     
-    public func replaceAll(products: [Product]) {
+    func replaceAll(products: [Product]) {
         self.products = products
     }
     
-    public func remove(with uid: String) {
+    func remove(with uid: String) {
         if let index = products.firstIndex(where: { $0.uid == uid }){
             products.remove(at: index)
         }
     }
     
-    public func saveToJsonFile() {
-        guard let fileUrl = getStoreJsonFilePath() else {
-            return
-        }
+    func saveToJsonFile() {
+        guard let fileUrl = getStoreJsonFilePath() else { return }
         
         var jsonArrayProducts = [[String: Any]]()
         for product in products {
@@ -47,11 +49,11 @@ class Store {
             let jsdata = try JSONSerialization.data(withJSONObject: jsonArrayProducts, options: [])
             try jsdata.write(to: fileUrl)
         } catch {
-            print("Error save products to file, \(error)")
+            print("Error save products to file, \(error.localizedDescription)")
         }
     }
     
-    public func loadFromJsonFile() {
+    func loadFromJsonFile() {
         guard let fileUrl = getStoreJsonFilePath() else {
             return
         }
@@ -66,31 +68,15 @@ class Store {
             products = []
             
             for item in jsonArrayProducts {
-                if let product = Product.parse(json: item) {
-                    add(product: product)
-                }
+                guard let product = Product.parse(json: item) else { continue }
+                add(product: product)
             }
         } catch {
-            print("Error reading data from a file, \(error)")
+            print("Error reading data from a file, \(error.localizedDescription)")
         }
     }
     
-    private func loadFromPlist() {
-        guard let filePath = Bundle.main.path(forResource: "Store", ofType: "plist") else {
-            return
-        }
-        
-        if let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) {
-            let decoder = PropertyListDecoder()
-            do {
-                products = try decoder.decode([Product].self, from: data)
-            } catch {
-                print("Error decoding product array, \(error)")
-            }
-        }
-    }
-    
-    public func saveImageToCache(imageURL: NSURL, imageName: String) -> String? {
+    func saveImageToCache(imageURL: NSURL, imageName: String) -> String? {
         guard let pathExtension = imageURL.pathExtension,
             let fileUrl = getStoreImagesFilePath(imageName: "\(imageName).\(pathExtension)") else {
             return nil
@@ -103,6 +89,23 @@ class Store {
             return fileUrl.path
         } catch {
             return nil
+        }
+    }
+}
+
+//MARK: - Private metods
+
+extension Store {
+    private func loadFromPlist() {
+        guard let filePath = Bundle.main.path(forResource: "Store", ofType: "plist") else { return }
+        
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else { return }
+        
+        let decoder = PropertyListDecoder()
+        do {
+            products = try decoder.decode([Product].self, from: data)
+        } catch {
+            print("Error decoding product array, \(error.localizedDescription)")
         }
     }
     
@@ -120,7 +123,7 @@ class Store {
             do {
                 try FileManager.default.createDirectory(at: dirUrl, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("Error creating directory \"\(directoryName)\", \(error)")
+                print("Error creating directory \"\(directoryName)\", \(error.localizedDescription)")
                 return nil
             }
         }
@@ -149,7 +152,7 @@ class Store {
             do {
                 try FileManager.default.createDirectory(at: dirUrl, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("Error creating directory \"\(directoryName)\", \(error)")
+                print("Error creating directory \"\(directoryName)\", \(error.localizedDescription)")
                 return nil
             }
         }

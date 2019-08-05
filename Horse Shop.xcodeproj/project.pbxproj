@@ -17,7 +17,6 @@
 		FFEA88E622F2F62800E4A590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA88E422F2F62800E4A590 /* LaunchScreen.storyboard */; };
 		FFEA88EF22F2F84C00E4A590 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88EE22F2F84C00E4A590 /* Product.swift */; };
 		FFEA88F122F2FF5D00E4A590 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F022F2FF5D00E4A590 /* Store.swift */; };
-		FFEA88F322F302E200E4A590 /* ProductExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F222F302E200E4A590 /* ProductExtensions.swift */; };
 		FFEA890222F3053E00E4A590 /* SaveProductJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F622F3053E00E4A590 /* SaveProductJSONOperation.swift */; };
 		FFEA890322F3053E00E4A590 /* LoadProductsFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F722F3053E00E4A590 /* LoadProductsFileOperation.swift */; };
 		FFEA890422F3053E00E4A590 /* BaseFileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA88F822F3053E00E4A590 /* BaseFileOperation.swift */; };
@@ -42,7 +41,6 @@
 		FFEA88E722F2F62800E4A590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFEA88EE22F2F84C00E4A590 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FFEA88F022F2FF5D00E4A590 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		FFEA88F222F302E200E4A590 /* ProductExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExtensions.swift; sourceTree = "<group>"; };
 		FFEA88F622F3053E00E4A590 /* SaveProductJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProductJSONOperation.swift; sourceTree = "<group>"; };
 		FFEA88F722F3053E00E4A590 /* LoadProductsFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadProductsFileOperation.swift; sourceTree = "<group>"; };
 		FFEA88F822F3053E00E4A590 /* BaseFileOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFileOperation.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			children = (
 				FFEA88EE22F2F84C00E4A590 /* Product.swift */,
 				FFEA88F022F2FF5D00E4A590 /* Store.swift */,
-				FFEA88F222F302E200E4A590 /* ProductExtensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,7 +248,6 @@
 				FFEA890422F3053E00E4A590 /* BaseFileOperation.swift in Sources */,
 				FFEA890522F3053E00E4A590 /* RemoveProductFileOperation.swift in Sources */,
 				FFEA891A22F35C3D00E4A590 /* ProductDetailController.swift in Sources */,
-				FFEA88F322F302E200E4A590 /* ProductExtensions.swift in Sources */,
 				FFEA890322F3053E00E4A590 /* LoadProductsFileOperation.swift in Sources */,
 				FFEA88DC22F2F62400E4A590 /* AppDelegate.swift in Sources */,
 				FF3937F322F5D00700CD3540 /* SaveProductImageOperation.swift in Sources */,
