@@ -45,6 +45,8 @@ extension ProductEditController {
         pickerController.mediaTypes = ["public.image"]
         pickerController.sourceType = .photoLibrary
         
+        priceTextField.delegate = self
+        
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
         descriptionTextView.layer.cornerRadius = 5
@@ -66,6 +68,16 @@ extension ProductEditController {
             name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension ProductEditController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let inverseSet = NSCharacterSet(charactersIn:"0123456789.").inverted
+        let components = string.components(separatedBy: inverseSet)
+        let filtered = components.joined(separator: "")
+        return string == filtered
     }
 }
 

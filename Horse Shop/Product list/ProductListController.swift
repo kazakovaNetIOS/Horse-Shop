@@ -18,6 +18,8 @@ class ProductListController: UIViewController {
     
     private var products: [Product] = [] {
         didSet {
+            guard products.count > 0 else { return }
+            
             products.sort(by: { $0.title < $1.title })
         }
     }
@@ -114,7 +116,6 @@ extension ProductListController {
 //MARK: - Data load
 extension ProductListController {
     fileprivate func loadProducts(completion: @escaping ()->Void) {
-        products = []
         let loadProducts = LoadProductsFileOperation(store: store)
         loadProducts.completionBlock = {
             print("Downloading products completed. Uploaded \(loadProducts.result?.count ?? 0) products")
